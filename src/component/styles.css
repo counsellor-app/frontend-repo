@@ -1,0 +1,378 @@
+/* Container for images */
+.container {
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden; /* Hide any extra space or overflow */
+}
+
+/* Wrapper to hold images */
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for individual image container */
+.image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hide images initially */
+    transition: opacity 2s ease-in-out; /* Smooth transition for opacity */
+    z-index: 1;
+}
+
+/* Initially, show the first image */
+.image-container:nth-child(1) {
+    opacity: 1;
+    z-index: 2; /* Make sure the first image is on top */
+}
+
+/* Image fade-in effect */
+.image-container.fade-in {
+    opacity: 1;
+    z-index: 2; /* Ensure the second image appears on top */
+}
+
+/* Image styling */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the container */
+}
+
+/* Text overlay container */
+.text-container {
+    position: absolute;
+    top: 50%; /* Vertically center the text container */
+    left: 50%; /* Horizontally center the text container */
+    transform: translate(-50%, -50%);
+    width: 100%; /* Adjust width to make it responsive */
+    height: 100%; /* Increased height */
+    color: white;
+    z-index: 3; /* Ensure text is on top of the images */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+/* Text styling inside the box */
+.text-box h2 {
+    margin: 0;
+    font-size: 2em; /* Larger font size for the heading */
+    font-weight: bold;
+    text-align: center; /* Center text alignment */
+    font-family:  'Times New Roman', Times, serif;
+
+}
+
+.text-box p {
+    margin: 10px 0 0;
+    font-size: 1.2em; /* Adjust font size for better readability */
+    text-align: center; /* Center text alignment */
+    font-family:  'Times New Roman', Times, serif;
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .text-container {
+        width: 100%; /* Reduce width on smaller screens */
+        height: 100%; /* Adjust height for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .text-box h2 {
+        font-size: 1.5em; /* Adjust font size */
+        font-family:  'Times New Roman', Times, serif;
+
+    }
+
+    .text-box p {
+        font-size: 1em; /* Adjust font size */
+        font-family:  'Times New Roman', Times, serif;
+
+    }
+}
+/* Why Us Section */
+.why-us-section {
+    padding: 60px 20px;
+    background: aliceblue;
+    text-align: center;
+    color: #333;
+  }
+  
+  .why-us-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #005b96;
+    font-weight: bold;
+    font-family:  'Times New Roman', Times, serif;
+
+  }
+  
+  /* Grid Layout */
+  .why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  /* Individual Card */
+  .card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icon Styles */
+  .icon {
+    font-size: 3em;
+    color: #00bcd4;
+    margin-bottom: 20px;
+  }
+  
+  .card h3 {
+    font-size: 1.8em;
+    color: #005b96;
+    margin-bottom: 10px;
+    font-family:  'Times New Roman', Times, serif;
+
+  }
+  
+  .card p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .why-us-section h2 {
+      font-size: 2em;
+    }
+  
+    .card {
+      padding: 20px;
+    }
+  
+    .icon {
+      font-size: 2.5em;
+    }
+  }
+  /* Let's Start Section */
+.lets-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, #00bcd4, #005b9f);
+    color: white;
+    padding: 60px 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+  
+  /* Animated Background Effect */
+  .lets-start::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 188, 212, 0));
+    animation: pulsate 8s infinite;
+    z-index: 0;
+  }
+  
+  /* Pulsating Animation */
+  @keyframes pulsate {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Content Styling */
+  .lets-start .content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lets-start h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .lets-start p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .lets-start .highlight {
+    font-weight: bold;
+    color: #ffeb3b;
+  }
+  
+  /* CTA Buttons */
+  .lets-start .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .primary-btn, .secondary-btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .primary-btn {
+    background-color: #ffeb3b;
+    color: #005b9f;
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .primary-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(255, 235, 59, 0.4);
+  }
+  
+  .secondary-btn:hover {
+    transform: translateY(-5px);
+    background-color: white;
+    color: #005b9f;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .lets-start {
+      padding: 40px 20px;
+    }
+  
+    .lets-start h2 {
+      font-size: 2em;
+    }
+  
+    .lets-start p {
+      font-size: 1em;
+    }
+  
+    .primary-btn, .secondary-btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  .counseling-types {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+    border-radius: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .counseling-types h2 {
+    font-size: 2.5em;
+    color: #007b9f;
+    margin-bottom: 15px;
+  }
+  
+  .counseling-types p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  
+  .counseling-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .counseling-option {
+    width: 300px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .counseling-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .counseling-option img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .counseling-option h3 {
+    font-size: 1.5em;
+    color: #007b9f;
+    margin-bottom: 10px;
+  }
+  
+  .counseling-option p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  .counseling-option button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #007b9f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .counseling-option button:hover {
+    background: #005f7f;
+    transform: scale(1.1);
+  }
+  

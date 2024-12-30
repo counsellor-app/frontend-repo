@@ -1,0 +1,132 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu Bar */
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* New font for the menu bar */
+}
+
+.menu-bar:hover {
+    background-color: #f4f4f4;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.menu-bar .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00bcd4;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-bar .logo:hover {
+    transform: scale(1.1);
+    color: #007b9f;
+}
+
+/* Menu Links */
+.menu-links {
+    display: flex;
+    gap: 20px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.menu-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+    position: relative;
+    padding: 8px 15px;
+    border-radius: 25px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    font-family:  'Times New Roman', Times, serif;
+
+ /* Ensure menu links use the new font */
+}
+
+/* Button-like Hover Effect */
+.menu-links a:hover {
+    color: white;
+    background-color: #00bcd4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Subtle Glow Effect */
+.menu-links a:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+/* Menu Toggle (Responsive) */
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    background: none;
+    border: none;
+    color: #00bcd4;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+/* Responsive Menu Styles */
+.menu-links.open {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Scroll Animation */
+.menu-bar.scrolled {
+    background-color: #f8f9fa;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}

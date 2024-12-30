@@ -1,0 +1,61 @@
+.counselor-categories {
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00bcd4, #005b9f);;
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .counselor-categories h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .counselor-categories ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .counselor-categories li {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .counselor-categories li:hover {
+    transform: scale(1.1);
+    color: #ff6b6b;
+  }
+  
+  .counseling-page {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .counseling-page-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  
+  .counseling-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
